@@ -1,41 +1,78 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+  private AudioSource systemSource;
+  private List<AudioSource> activeSources;
 
-    public static AudioManager Instance;
-    
-    [SerializeField] AudioSource audioSource;
-    [SerializeField] private List<AudioClip> audioClips;
 
-    private void Awake()
-    {
-        if (Instance == null)
+
+
+    #region Singleton Logic
+        private void Awake()
+        {
+        if (instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad (gameObject);
+            systemSource = GetComponent<AudioSource>();
+            activeSources = new List<AudioSource>();
         }
         else
         {
             Destroy(gameObject);
         }
-    }
-
-    private void Start()
+        }
+    #endregion
+    
+    public void Play(AudioClip clip, AudioSource source)
     {
-        audioSource = GetComponent<AudioSource>();
+        if (!activeSources.Contains(source))
+                activeSources.Add(source);
+        systemSource.Stop();
+        systemSource.clip = clip;
+        systemSource.Play();
     }
 
-    private void PlayClip(int clipIndex)
+   public void PlayOneShot(AudioClip clip)
     {
-        audioSource.PlayOneShot(audioClips[clipIndex]);
-        audioSource.Play();
+        systemSource.PlayOneShot(clip);
     }
 
-    public void StopClip(int clipIndex)
+    public void PlaySound(AudioClip clip)
     {
         audioSource.Stop();
-        audioSource.clip = null;
+        audioSource.clip = clip;
+        audioSource.Play();
+
     }
+
+    public void Stop(AudioSource source)
+    {
+            if(activeSources.Contains(source))
+                activeSources.remove(source);
+                source.Stop();
+    }
+
+    public void Stop()
+    {
+        audioSource.Stop;
+    }
+
+    public void Pause()
+    {
+        audioSource.Pause;
+    }
+
+    public void Resume()
+    {
+        audioSource.UnPause;
+    }
+
 }
+ 
+
+
+ 
+
+   
