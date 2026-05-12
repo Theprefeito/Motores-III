@@ -418,8 +418,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5991240702244041511, guid: 87b11988ab07fd34a892243e0df9b459, type: 3}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1787954210}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: CarregarCena
         m_Mode: 5
         m_Arguments:
@@ -480,6 +480,7 @@ GameObject:
   - component: {fileID: 1787954208}
   - component: {fileID: 1787954207}
   - component: {fileID: 1787954206}
+  - component: {fileID: 1787954210}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -571,6 +572,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 1}
   m_SizeDelta: {x: 866, y: 487.40002}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1787954210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787954205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e5566155d4cd840a242f413581e2c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuController
 --- !u!1 &1872059515
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,8 +667,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5991240702244041511, guid: 87b11988ab07fd34a892243e0df9b459, type: 3}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1787954210}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: SairDoJogo
         m_Mode: 1
         m_Arguments:

@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject); 
             return; // IMPORTANTE: Impede que o resto do código rode no objeto que vai morrer
         }
+        
+        Debug.Log($"<color=cyan>[GameManager]</color> Estado: <b>{estadoAtual}</b>");
 
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
@@ -95,6 +97,7 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded -= AoTerminarDeCarregar;
 
         // 2. Agora que a cena carregou, mudamos o estado com segurança
+        
         if (cena.name == "Cena_MenuPrincipal") 
             MudarEstado(GameState.MenuPrincipal);
         else if (cena.name == "GetStarted_Scene") 
