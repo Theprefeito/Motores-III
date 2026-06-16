@@ -7,17 +7,6 @@ public class UiGUI : MonoBehaviour
     
     [SerializeField] TextMeshProUGUI Moedas;
     
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnEnable()
     {
         JogadorOM.ChangeCoins += UpdateCoinsText;
