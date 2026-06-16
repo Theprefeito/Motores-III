@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         // Como estamos na _Boot, vamos para a Splash automaticamente
-        CarregarCena("Cena_Splash");
+        CarregarCena("Cena_Splash", null);
     }
 
     // 3. Gerenciamento de Estados com Debug.Log
@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+    
 
     private void TentarReativarGameplay()
     {
@@ -81,12 +82,16 @@ public class GameManager : MonoBehaviour
 
     // 4. Controle Único de Cenas
     // Somente o GameManager acessa o SceneManager
-   public void CarregarCena(string nomeDaCena)
+   public void CarregarCena(string nomeDaCena, string nomeDaCena2)
     {
         // Em vez de mudar o estado imediatamente, vamos usar um evento da Unity
         // que avisa quando a cena terminou de carregar.
         SceneManager.LoadScene(nomeDaCena);
         
+        if (nomeDaCena2 != null)
+        {
+            SceneManager.LoadScene(nomeDaCena2, LoadSceneMode.Additive);
+        }
         // Subscrevemos temporariamente a um evento da Unity
         SceneManager.sceneLoaded += AoTerminarDeCarregar;
     }

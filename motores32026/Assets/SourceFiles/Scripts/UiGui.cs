@@ -1,0 +1,36 @@
+using TMPro;
+using UnityEngine;
+
+public class UiGUI : MonoBehaviour
+{
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
+    [SerializeField] TextMeshProUGUI Moedas;
+    
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void OnEnable()
+    {
+        JogadorOM.ChangeCoins += UpdateCoinsText;
+    }
+    
+    private void OnDisable()
+    {
+        JogadorOM.ChangeCoins += UpdateCoinsText;
+    }
+
+
+    private void UpdateCoinsText(int quantidade)
+    {
+        Moedas.text = quantidade.ToString();
+    }
+}

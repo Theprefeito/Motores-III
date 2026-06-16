@@ -2,10 +2,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
-    public void CarregarCena(string nomeDaCena)
+    public void CarregarCena()
     {
       
-        GameManager.Instance.CarregarCena(nomeDaCena);
+        GameManager.Instance.CarregarCena("GetStarted_Scene", "UI");
     }
     
     public void SairDoJogo()

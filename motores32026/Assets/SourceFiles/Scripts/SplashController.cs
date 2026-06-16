@@ -14,7 +14,7 @@ public class SplashController : MonoBehaviour
         yield return new WaitForSeconds(2f);
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.CarregarCena("Cena_MenuPrincipal");
+            GameManager.Instance.CarregarCena("Cena_MenuPrincipal", null);
     }
     }
 }
