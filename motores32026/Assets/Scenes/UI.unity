@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddab4c7a34592644280a4062cf7f5e45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UiGUI
-  Moedas: {fileID: 390580312}
+  coins: {fileID: 390580312}
 --- !u!114 &1361822998
 MonoBehaviour:
   m_ObjectHideFlags: 0

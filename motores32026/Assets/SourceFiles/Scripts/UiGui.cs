@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class UiGUI : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+     
+    [SerializeField] TextMeshProUGUI coins;
     
-    [SerializeField] TextMeshProUGUI Moedas;
-    
+
     private void OnEnable()
     {
         JogadorOM.ChangeCoins += UpdateCoinsText;
@@ -20,6 +20,6 @@ public class UiGUI : MonoBehaviour
 
     private void UpdateCoinsText(int quantidade)
     {
-        Moedas.text = quantidade.ToString();
+        coins.text = quantidade.ToString();
     }
 }
