@@ -48,6 +48,7 @@ namespace StarterAssets
 		{
 			SprintInput(value.isPressed);
 		}
+		
 #endif
 
 			private void Awake()
@@ -88,7 +89,6 @@ namespace StarterAssets
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 			Cursor.visible = !newState;  
 			
-
 		}
 	}
 	
